@@ -12,3 +12,5 @@ include ':features:auth', ':features:onboarding', ':features:dashboard', ':featu
 /*include ':features:onboarding'
 include ':features:dashboard'
 include ':features:jon_details'*/
+include ':shared'
+include ':core'
