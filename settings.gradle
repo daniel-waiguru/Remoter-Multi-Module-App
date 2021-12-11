@@ -1,0 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "Remoter"
+include ':app'
+include ':features:auth', ':features:onboarding', ':features:dashboard', ':features:job_details'
+/*include ':features:onboarding'
+include ':features:dashboard'
+include ':features:jon_details'*/
