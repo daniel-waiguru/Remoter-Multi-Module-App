@@ -1,8 +1,9 @@
 package com.danielwaiguru.remoter.core.di
 
+import com.danielwaiguru.remoter.core.BuildConfig
 import com.danielwaiguru.remoter.core.data.remote.RemotiveApiService
 import com.danielwaiguru.remoter.shared.utils.ApiConstants.BASE_URL
-import okhttp3.*
+import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
