@@ -1,4 +1,4 @@
-package com.danielwaiguru.auth
+package com.danielwaiguru.remoter.auth
 
 import org.junit.Test
 

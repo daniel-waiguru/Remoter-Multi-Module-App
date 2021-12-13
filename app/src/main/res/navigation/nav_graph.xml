@@ -2,7 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/auth_nav_graph">
+    app:startDestination="@id/nav_auth"
+    >
+    <include app:graph="@navigation/nav_auth" />
+    <include-dynamic
+        android:id="@+id/onBoarding"
+        app:graphResName="on_boarding_graph"
+        app:moduleName="onboarding"
 
-    <include app:graph="@navigation/auth_nav_graph" />
+        />
 </navigation>
