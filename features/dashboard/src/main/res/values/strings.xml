@@ -1,0 +1,8 @@
+<resources>
+    <string name="search_hint">Search a job or position.</string>
+    <string name="app_name">Remoter</string>
+    <string name="discover_your_dream_job">Discover your\ndream job.</string>
+    <string name="show_all">See all</string>
+    <string name="jobs_for_you">Jobs for you</string>
+    <string name="all_jobs">All jobs</string>
+</resources>
