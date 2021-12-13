@@ -1,14 +1,13 @@
 package com.danielwaiguru.remoter.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.auth.databinding.FragmentLoginBinding
-import com.danielwaiguru.shared.BindingFragment
+import com.danielwaiguru.remoter.shared.BindingFragment
+import com.danielwaiguru.remoter.shared.utils.extensions.slideInBottom
 
 class LoginFragment : BindingFragment<FragmentLoginBinding>() {
     override val bindingInflater: (LayoutInflater) -> ViewBinding
@@ -20,10 +19,20 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>() {
     }
 
     private fun setupUI() {
-        binding.getStarted.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_auth_to_onBoarding
-            )
+        with(binding) {
+            getStarted.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_auth_to_onBoarding
+                )
+            }
+            val anim =  android.view.animation.AnimationUtils.loadAnimation(
+                requireContext(),
+                R.anim.slide_in_bottom)
+
+            getStarted.apply {
+                startAnimation(anim)
+                visibility = View.VISIBLE
+            }
         }
     }
 }

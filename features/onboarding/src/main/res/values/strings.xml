@@ -9,4 +9,7 @@
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dolor augue, feugiat ac auctor eu, convallis et ex. Phasellus scelerisque enim ac nisi dictum, ac elementum velit suscipit. Vivamus pharetra mattis massa, et facilisis mi congue eget. Cras vel pharetra ex, suscipit cursus orci. Vestibulum volutpat rutrum ultrices.</item>
         <item>Vivamus mauris turpis, faucibus a facilisis a, fermentum eget diam. In hac habitasse platea dictumst. Sed felis ipsum, sollicitudin sit amet orci maximus, eleifend congue elit. Praesent eu lectus eu sapien rhoncus facilisis. Pellentesque egestas facilisis risus, vel aliquet eros efficitur eget.</item>
     </string-array>
+    <string name="explore">Explore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
