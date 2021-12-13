@@ -5,10 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.danielwaiguru.remoter.dashboard.databinding.FragmentJobPreferenceBinding
+import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.onboarding.R
+import com.danielwaiguru.remoter.onboarding.databinding.FragmentJobPreferenceBinding
 import com.danielwaiguru.remoter.shared.BindingFragment
 
 
 class JobPreferenceFragment : BindingFragment<FragmentJobPreferenceBinding>() {
+    override val bindingInflater: (LayoutInflater) -> ViewBinding
+        get() = FragmentJobPreferenceBinding::inflate
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 }
