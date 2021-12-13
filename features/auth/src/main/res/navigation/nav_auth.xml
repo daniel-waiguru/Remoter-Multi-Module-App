@@ -13,6 +13,7 @@
         <action
             android:id="@+id/action_auth_to_onBoarding"
             app:destination="@+id/onBoarding"
+            app:popUpTo="@id/nav_auth"
             />
     </fragment>
 </navigation>

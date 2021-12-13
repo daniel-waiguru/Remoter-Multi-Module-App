@@ -1,2 +1,5 @@
 
 apply from: "$rootProject.projectDir/shared-deps.gradle"
+dependencies {
+    implementation "com.airbnb.android:lottie:4.1.0"
+}

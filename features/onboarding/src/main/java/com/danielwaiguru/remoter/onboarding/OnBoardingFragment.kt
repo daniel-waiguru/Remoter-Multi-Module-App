@@ -4,6 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.core.net.toUri
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import androidx.viewpager2.widget.ViewPager2
 import com.danielwaiguru.remoter.onboarding.databinding.FragmentOnBoardingBinding
@@ -95,6 +100,9 @@ class OnBoardingFragment : BindingFragment<FragmentOnBoardingBinding>() {
         binding.btnExplore.apply {
             startAnimation(anim)
             visibility = View.VISIBLE
+            setOnClickListener {
+                navToDashboardScreen()
+            }
         }
         /*binding.btnExplore.animate()
             .setDuration(ANIMATION_DURATION)
@@ -106,13 +114,27 @@ class OnBoardingFragment : BindingFragment<FragmentOnBoardingBinding>() {
                 }
             })*/
     }
+    private fun navToDashboardScreen() {
+        val deepLink = NavDeepLinkRequest.Builder
+            .fromUri("remoter://dashboard".toUri())
+            .build()
+        findNavController().apply {
+            popBackStack()
+            navigate(deepLink)
+        }
+        /*val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.nav_graph, true)
+            .setEnterAnim(R.anim.nav_default_enter_anim)
+            .setEnterAnim(R.anim.nav_default_exit_anim)
+            .build()*/
+    }
 
     private fun createPagerAdapter(screenCount: Int): OnBoardingAdapter {
         return OnBoardingAdapter(requireActivity(), screenCount)
     }
 
-    override fun onStop() {
+    override fun onDestroyView() {
         binding.onBoardPager.unregisterOnPageChangeCallback(onBoardingPageChangeCallback)
-        super.onStop()
+        super.onDestroyView()
     }
 }

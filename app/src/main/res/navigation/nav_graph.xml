@@ -10,5 +10,7 @@
         app:graphResName="on_boarding_graph"
         app:moduleName="onboarding"
 
-        />
+        >
+    </include-dynamic>
+    <include app:graph="@navigation/nav_dashboard" />
 </navigation>
