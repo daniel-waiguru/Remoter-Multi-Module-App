@@ -43,6 +43,10 @@ dependencies {
     //Scalable size unit
     api "com.intuit.sdp:sdp-android:1.0.6"
     api "com.intuit.ssp:ssp-android:1.0.6"
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
