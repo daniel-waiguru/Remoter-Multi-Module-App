@@ -25,4 +25,11 @@ class JobsRepositoryImpl(
                 jobDto.toDomain()
             }
         }
+
+    override suspend fun getCategoryJos(category: String): ResultWrapper<List<JobDomain>> =
+        safeCall(ioDispatcher) {
+            apiService.getCategoryJobs(category).jobs.map {
+                it.toDomain()
+            }
+        }
 }
