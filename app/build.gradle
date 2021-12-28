@@ -49,6 +49,9 @@ dependencies {
     api 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     api 'androidx.navigation:navigation-ui-ktx:2.3.5'
     api "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
+    //DI - Koin
+    implementation "io.insert-koin:koin-android:3.1.2"
+    implementation "io.insert-koin:koin-core:3.1.2"
 
     //Scalable size unit
     api "com.intuit.sdp:sdp-android:1.0.6"

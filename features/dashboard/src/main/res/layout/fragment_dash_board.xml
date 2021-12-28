@@ -8,7 +8,7 @@
     android:paddingStart="@dimen/_20sdp"
     android:paddingTop="@dimen/_10sdp"
     android:paddingEnd="@dimen/_20sdp"
-    tools:context=".DashBoardFragment">
+    tools:context=".presentation.views.DashBoardFragment">
 
     <TextView
         android:id="@+id/txtGreetings"
@@ -94,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"
+                    tools:listitem="@layout/job_item"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -142,8 +143,8 @@
                     android:id="@+id/allJobsRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:orientation="horizontal"
+                    tools:listitem="@layout/job_item"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -156,6 +157,7 @@
                     app:lottie_fileName="loading.json"
                     android:layout_width="@dimen/_80sdp"
                     app:lottie_loop="true"
+                    android:visibility="gone"
                     android:layout_height="@dimen/_80sdp"
                     app:layout_constraintTop_toTopOf="@id/allJobsRv"
                     app:layout_constraintBottom_toBottomOf="@id/allJobsRv"
