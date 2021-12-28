@@ -5,6 +5,6 @@ import com.danielwaiguru.remoter.dashboard.presentation.views.DashBoardViewModel
 import org.koin.dsl.module
 
 val viewModelModules = module {
-    single { DashBoardViewModel(get()) }
+    single { DashBoardViewModel(get(), get()) }
 }
 val appModules = listOf(viewModelModules) + coreLibModules

@@ -6,10 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danielwaiguru.remoter.core.data.util.ResultWrapper
 import com.danielwaiguru.remoter.core.domain.models.JobDomain
+import com.danielwaiguru.remoter.core.domain.use_cases.GetCategoryJobsUseCase
 import com.danielwaiguru.remoter.core.domain.use_cases.GetJobsUseCase
 import kotlinx.coroutines.launch
 
-class DashBoardViewModel(private val getJobsUseCase: GetJobsUseCase): ViewModel() {
+class DashBoardViewModel(
+    private val getJobsUseCase: GetJobsUseCase,
+    private val getCategoryJobsUseCase: GetCategoryJobsUseCase
+): ViewModel() {
     private val _allJobs: MutableLiveData<ResultWrapper<List<JobDomain>>> = MutableLiveData()
     val allJobs: LiveData<ResultWrapper<List<JobDomain>>> get() = _allJobs
 
@@ -35,7 +39,7 @@ class DashBoardViewModel(private val getJobsUseCase: GetJobsUseCase): ViewModel(
         _preferencesJobs.value = ResultWrapper.Loading
         viewModelScope.launch {
             _preferencesJobs.postValue(
-                getJobsUseCase
+                getCategoryJobsUseCase.invoke(category)
             )
         }
     }

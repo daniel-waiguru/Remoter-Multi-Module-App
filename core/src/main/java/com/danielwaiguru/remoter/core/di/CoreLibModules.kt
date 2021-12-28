@@ -4,6 +4,7 @@ import com.danielwaiguru.remoter.core.BuildConfig
 import com.danielwaiguru.remoter.core.data.remote.RemotiveApiService
 import com.danielwaiguru.remoter.core.data.repositories.JobsRepositoryImpl
 import com.danielwaiguru.remoter.core.domain.repositories.JobsRepository
+import com.danielwaiguru.remoter.core.domain.use_cases.GetCategoryJobsUseCase
 import com.danielwaiguru.remoter.core.domain.use_cases.GetJobsUseCase
 import com.danielwaiguru.remoter.shared.utils.ApiConstants.BASE_URL
 import okhttp3.OkHttpClient
@@ -43,6 +44,7 @@ fun provideRemotiveApiService(retrofit: Retrofit): RemotiveApiService {
 }
 private val useCasesModules = module {
     single { GetJobsUseCase(get()) }
+    single { GetCategoryJobsUseCase(get()) }
 }
 private val repoModules = module {
     single<JobsRepository>{ JobsRepositoryImpl(get()) }
