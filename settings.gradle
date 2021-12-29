@@ -8,9 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Remoter"
 include ':app', ':shared', ':core', ':features:auth', ':features:dashboard', ':features:job_details'
-/*include ':features:auth'*/
 include ':features:onboarding'
-/*include ':features:dashboard'
-include ':features:job_details'
-include
-include ':core'*/

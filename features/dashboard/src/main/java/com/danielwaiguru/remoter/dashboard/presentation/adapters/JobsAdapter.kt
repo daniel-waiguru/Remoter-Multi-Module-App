@@ -1,4 +1,4 @@
-package com.danielwaiguru.remoter.dashboard.presentation
+package com.danielwaiguru.remoter.dashboard.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

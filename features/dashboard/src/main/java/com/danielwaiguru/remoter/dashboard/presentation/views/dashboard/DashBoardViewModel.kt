@@ -1,4 +1,4 @@
-package com.danielwaiguru.remoter.dashboard.presentation.views
+package com.danielwaiguru.remoter.dashboard.presentation.views.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -23,7 +23,7 @@ class DashBoardViewModel(
     init {
         getAllJobs()
     }
-    fun getAllJobs() {
+    private fun getAllJobs() {
         _allJobs.value = ResultWrapper.Loading
         viewModelScope.launch {
             _allJobs.postValue(

@@ -5,4 +5,6 @@
     <string name="show_all">See all</string>
     <string name="jobs_for_you">Jobs for you</string>
     <string name="all_jobs">All jobs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
