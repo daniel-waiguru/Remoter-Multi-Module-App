@@ -1,5 +1,9 @@
 package com.danielwaiguru.remoter.core.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class JobDomain(
     val id: Int,
     val url: String,
@@ -11,4 +15,4 @@ data class JobDomain(
     val candidateRequiredLocation: String,
     val salary: String,
     val description: String
-)
+): Parcelable

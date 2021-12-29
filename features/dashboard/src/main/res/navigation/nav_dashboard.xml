@@ -7,8 +7,17 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.danielwaiguru.remoter.dashboard.DashBoardFragment"
+        android:name="com.danielwaiguru.remoter.dashboard.presentation.views.dashboard.DashBoardFragment"
         android:label="fragment_dash_board"
-        tools:layout="@layout/fragment_dash_board" />
+        tools:layout="@layout/fragment_dash_board" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_jobsListFragment"
+            app:destination="@id/jobsListFragment" />
+    </fragment>
     <deepLink app:uri="remoter://dashboard" />
+    <fragment
+        android:id="@+id/jobsListFragment"
+        android:name="com.danielwaiguru.remoter.dashboard.presentation.views.jobslist.JobsListFragment"
+        android:label="fragment_jobs_list"
+        tools:layout="@layout/fragment_jobs_list" />
 </navigation>

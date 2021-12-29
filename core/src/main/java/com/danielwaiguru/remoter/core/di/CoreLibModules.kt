@@ -2,6 +2,10 @@ package com.danielwaiguru.remoter.core.di
 
 import com.danielwaiguru.remoter.core.BuildConfig
 import com.danielwaiguru.remoter.core.data.remote.RemotiveApiService
+import com.danielwaiguru.remoter.core.data.repositories.JobsRepositoryImpl
+import com.danielwaiguru.remoter.core.domain.repositories.JobsRepository
+import com.danielwaiguru.remoter.core.domain.use_cases.GetCategoryJobsUseCase
+import com.danielwaiguru.remoter.core.domain.use_cases.GetJobsUseCase
 import com.danielwaiguru.remoter.shared.utils.ApiConstants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -38,7 +42,16 @@ fun provideRetrofitInstance(okHttpClient: OkHttpClient): Retrofit {
 fun provideRemotiveApiService(retrofit: Retrofit): RemotiveApiService {
     return retrofit.create(RemotiveApiService::class.java)
 }
+private val useCasesModules = module {
+    single { GetJobsUseCase(get()) }
+    single { GetCategoryJobsUseCase(get()) }
+}
+private val repoModules = module {
+    single<JobsRepository>{ JobsRepositoryImpl(get()) }
+}
 
 val coreLibModules = listOf(
     networkingModule,
+    useCasesModules,
+    repoModules
 )

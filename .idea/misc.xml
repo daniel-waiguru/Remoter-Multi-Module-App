@@ -12,6 +12,9 @@
         <entry key="..\:/AndroidStudioProjects/Remoter/features/dashboard/src/main/res/drawable/ss.xml" value="0.21510416666666668" />
         <entry key="..\:/AndroidStudioProjects/Remoter/features/dashboard/src/main/res/layout/fragment_dash_board.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Remoter/features/dashboard/src/main/res/layout/fragment_job_preference.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Remoter/features/dashboard/src/main/res/layout/fragment_jobs_list.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Remoter/features/dashboard/src/main/res/layout/job_item.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Remoter/features/job_details/src/main/res/layout/fragment_job_details.xml" value="0.10099637681159421" />
         <entry key="..\:/AndroidStudioProjects/Remoter/features/onboarding/src/main/res/drawable/blue_circle.xml" value="0.21510416666666668" />
         <entry key="..\:/AndroidStudioProjects/Remoter/features/onboarding/src/main/res/drawable/ligh_blue_cicle.xml" value="0.21510416666666668" />
         <entry key="..\:/AndroidStudioProjects/Remoter/features/onboarding/src/main/res/drawable/light_blue_cicle.xml" value="0.21510416666666668" />

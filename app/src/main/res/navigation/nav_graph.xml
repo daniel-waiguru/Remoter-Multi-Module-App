@@ -13,4 +13,5 @@
         >
     </include-dynamic>
     <include app:graph="@navigation/nav_dashboard" />
+    <include app:graph="@navigation/nav_details" />
 </navigation>

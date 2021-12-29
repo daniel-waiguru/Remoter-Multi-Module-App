@@ -43,6 +43,10 @@ dependencies {
     //Scalable size unit
     api "com.intuit.sdp:sdp-android:1.0.6"
     api "com.intuit.ssp:ssp-android:1.0.6"
+    //Navigation
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    //api "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
 
     //Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
