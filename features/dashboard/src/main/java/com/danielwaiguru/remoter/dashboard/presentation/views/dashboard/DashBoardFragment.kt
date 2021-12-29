@@ -9,10 +9,13 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.core.data.util.ResultWrapper
+import com.danielwaiguru.remoter.core.domain.models.JobDomain
+import com.danielwaiguru.remoter.dashboard.R
 import com.danielwaiguru.remoter.dashboard.databinding.FragmentDashBoardBinding
 import com.danielwaiguru.remoter.dashboard.presentation.adapters.JobsAdapter
 import com.danielwaiguru.remoter.dashboard.presentation.adapters.PrefsJobsAdapter
 import com.danielwaiguru.remoter.shared.BindingFragment
+import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashBoardFragment : BindingFragment<FragmentDashBoardBinding>() {
@@ -34,24 +37,22 @@ class DashBoardFragment : BindingFragment<FragmentDashBoardBinding>() {
         setupRecyclerViews(adapter)
         attachObservers(adapter, prefsJobsAdapter)
     }
-    private fun navigateToDetails() {
-        val name = "Danny"
+    private fun navigateToDetails(job: JobDomain) {
+        val jobString = Gson().toJson(job)
         val deepLink = NavDeepLinkRequest.Builder
-            .fromUri("remoter://jobDetails?name=${name}".toUri())
+            .fromUri("remoter://jobDetails/${jobString}".toUri())
             .build()
         val navOptions = NavOptions.Builder()
+            .setEnterAnim(R.anim.nav_default_enter_anim)
+            .setExitAnim(R.anim.nav_default_exit_anim)
             .build()
-        findNavController().navigate(deepLink)
+        findNavController().navigate(deepLink, navOptions)
     }
-
     private fun initListeners() {
         binding.showAllJobs.setOnClickListener {
             findNavController().navigate(
                 DashBoardFragmentDirections.actionDashBoardFragmentToJobsListFragment()
             )
-        }
-        binding.showJobsForMe.setOnClickListener {
-            navigateToDetails()
         }
     }
 
@@ -111,6 +112,8 @@ class DashBoardFragment : BindingFragment<FragmentDashBoardBinding>() {
     }
 
     private fun createJobsAdapter(): JobsAdapter {
-        return JobsAdapter()
+        return JobsAdapter {
+            navigateToDetails(it)
+        }
     }
 }

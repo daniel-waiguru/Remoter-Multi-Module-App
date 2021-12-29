@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.danielwaiguru.remoter.core.domain.models.JobDomain
 import com.danielwaiguru.remoter.dashboard.databinding.JobItemBinding
+import com.danielwaiguru.remoter.shared.utils.ClickListener
 
-class JobsAdapter: ListAdapter<JobDomain, JobsAdapter.JobsViewHolder>(COMPARATOR) {
+class JobsAdapter(
+    private val clickListener: ClickListener<JobDomain>
+    ): ListAdapter<JobDomain, JobsAdapter.JobsViewHolder>(COMPARATOR) {
     private object COMPARATOR: DiffUtil.ItemCallback<JobDomain>() {
         override fun areItemsTheSame(oldItem: JobDomain, newItem: JobDomain): Boolean {
             return oldItem.id == newItem.id
@@ -28,7 +31,13 @@ class JobsAdapter: ListAdapter<JobDomain, JobsAdapter.JobsViewHolder>(COMPARATOR
     }
 
     override fun onBindViewHolder(holder: JobsViewHolder, position: Int) {
-        holder.bindItem(getItem(position))
+        val jobItem = getItem(position)
+        holder.run {
+            bindItem(jobItem)
+            itemView.setOnClickListener {
+                clickListener(jobItem)
+            }
+        }
     }
 
     class JobsViewHolder(

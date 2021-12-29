@@ -3,12 +3,19 @@ package com.danielwaiguru.remoter.dashboard.presentation.views.jobslist
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.core.net.toUri
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.core.data.util.ResultWrapper
+import com.danielwaiguru.remoter.core.domain.models.JobDomain
+import com.danielwaiguru.remoter.dashboard.R
 import com.danielwaiguru.remoter.dashboard.databinding.FragmentJobsListBinding
 import com.danielwaiguru.remoter.dashboard.presentation.adapters.JobsAdapter
 import com.danielwaiguru.remoter.dashboard.presentation.views.dashboard.DashBoardViewModel
 import com.danielwaiguru.remoter.shared.BindingFragment
+import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class JobsListFragment : BindingFragment<FragmentJobsListBinding>() {
@@ -52,6 +59,19 @@ class JobsListFragment : BindingFragment<FragmentJobsListBinding>() {
     }
 
     private fun createAdapter(): JobsAdapter {
-        return JobsAdapter()
+        return JobsAdapter{
+            navigateToDetails(it)
+        }
+    }
+    private fun navigateToDetails(job: JobDomain) {
+        val jobString = Gson().toJson(job)
+        val deepLink = NavDeepLinkRequest.Builder
+            .fromUri("remoter://jobDetails/${jobString}".toUri())
+            .build()
+        val navOptions = NavOptions.Builder()
+            .setEnterAnim(R.anim.nav_default_enter_anim)
+            .setExitAnim(R.anim.nav_default_exit_anim)
+            .build()
+        findNavController().navigate(deepLink, navOptions)
     }
 }

@@ -10,9 +10,9 @@
         android:name="com.danielwaiguru.remoter.job_details.JobDetailsFragment"
         android:label="fragment_job_details"
         tools:layout="@layout/fragment_job_details" >
+        <deepLink app:uri="remoter://jobDetails/{job}" />
         <argument
-            android:name="name"
+            android:name="job"
             app:argType="string" />
     </fragment>
-    <deepLink app:uri="remoter://jobDetails" />
 </navigation>
