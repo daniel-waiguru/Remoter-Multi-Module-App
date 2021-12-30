@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.danielwaiguru.remoter.core.domain.models.JobDomain
 import com.danielwaiguru.remoter.dashboard.databinding.JobItemBinding
 import com.danielwaiguru.remoter.shared.utils.ClickListener
+import com.danielwaiguru.remoter.shared.utils.DateUtils
 
 class JobsAdapter(
     private val clickListener: ClickListener<JobDomain>
@@ -49,7 +50,10 @@ class JobsAdapter(
                     company.text = job.companyName
                     category.text = job.category
                     jobType.text = job.jobType
-                    location.text = job.publicationDate
+                    val date = DateUtils.parseJsonDate(job.publicationDate)
+                    if (date != null) {
+                        location.text = DateUtils.formatToFullDate(date)
+                    }
                 }
             }
     }
