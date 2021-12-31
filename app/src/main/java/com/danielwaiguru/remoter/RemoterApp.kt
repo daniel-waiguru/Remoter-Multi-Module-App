@@ -2,6 +2,7 @@ package com.danielwaiguru.remoter
 
 import android.app.Application
 import com.danielwaiguru.remoter.dashboard.di.appModules
+import com.danielwaiguru.remoter.logging.Logger
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -11,6 +12,7 @@ class RemoterApp: Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin()
+        Logger.initLogger()
     }
 
     private fun initKoin() {
