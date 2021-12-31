@@ -17,6 +17,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Decrypt google-services.json file
+        env:
+          FIREBASE_SECRET: ${{secrets.FIREBASE_SECRET}}
+        run: echo $FIREBASE_SECRET > app/google-services.json
+
       - name: Build Project
         run: ./gradlew build
 
