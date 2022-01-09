@@ -1,3 +1,5 @@
+package com.danielwaiguru.remoter
+
 import timber.log.Timber
 
 /**

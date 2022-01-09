@@ -1,6 +1,6 @@
-package com.danielwaiguru.remoter.logging
+package com.danielwaiguru.remoter
 
-import TimberLogging
+
 import timber.log.Timber
 
 

@@ -6,7 +6,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.auth.databinding.FragmentLoginBinding
-import com.danielwaiguru.remoter.logging.Logger.timberLogger
+import com.danielwaiguru.remoter.Logger.timberLogger
 import com.danielwaiguru.remoter.shared.BindingFragment
 
 class LoginFragment : BindingFragment<FragmentLoginBinding>() {
