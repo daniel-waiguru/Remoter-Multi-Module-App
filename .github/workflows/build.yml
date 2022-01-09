@@ -20,7 +20,7 @@ jobs:
       - name: Decrypt google-services.json file
         env:
           FIREBASE_SECRET: ${{secrets.FIREBASE_SECRET}}
-        run: echo $FIREBASE_SECRET > app/google-services.json
+        run: echo $FIREBASE_SECRET > logging/google-services.json
 
       - name: Build Project
         run: ./gradlew build
