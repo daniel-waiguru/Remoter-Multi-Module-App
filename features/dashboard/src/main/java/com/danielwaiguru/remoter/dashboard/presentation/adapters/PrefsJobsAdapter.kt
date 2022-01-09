@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.danielwaiguru.remoter.core.domain.models.JobDomain
 import com.danielwaiguru.remoter.dashboard.databinding.JobItemBinding
+import com.danielwaiguru.remoter.shared.utils.DateUtils
 
 class PrefsJobsAdapter: ListAdapter<JobDomain, PrefsJobsAdapter.JobsViewHolder>(COMPARATOR) {
     private object COMPARATOR: DiffUtil.ItemCallback<JobDomain>() {
@@ -40,7 +41,10 @@ class PrefsJobsAdapter: ListAdapter<JobDomain, PrefsJobsAdapter.JobsViewHolder>(
                     company.text = job.companyName
                     category.text = job.category
                     jobType.text = job.jobType
-                    location.text = job.publicationDate
+                    val date = DateUtils.parseJsonDate(job.publicationDate)
+                    if (date != null) {
+                        location.text = DateUtils.formatToFullDate(date)
+                    }
                 }
             }
     }

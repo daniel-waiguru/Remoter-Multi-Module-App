@@ -11,6 +11,7 @@ class RemoterApp: Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin()
+        Logger.initLogger()
     }
 
     private fun initKoin() {

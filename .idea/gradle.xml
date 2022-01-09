@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/features/dashboard" />
             <option value="$PROJECT_DIR$/features/job_details" />
             <option value="$PROJECT_DIR$/features/onboarding" />
+            <option value="$PROJECT_DIR$/logging" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>

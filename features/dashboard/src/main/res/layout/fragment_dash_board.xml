@@ -8,6 +8,7 @@
     android:paddingStart="@dimen/_20sdp"
     android:paddingTop="@dimen/_10sdp"
     android:paddingEnd="@dimen/_20sdp"
+
     tools:context=".presentation.views.dashboard.DashBoardFragment">
 
     <TextView

@@ -6,8 +6,8 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.danielwaiguru.remoter.auth.databinding.FragmentLoginBinding
+import com.danielwaiguru.remoter.Logger.timberLogger
 import com.danielwaiguru.remoter.shared.BindingFragment
-import com.danielwaiguru.remoter.shared.utils.extensions.slideInBottom
 
 class LoginFragment : BindingFragment<FragmentLoginBinding>() {
     override val bindingInflater: (LayoutInflater) -> ViewBinding
@@ -15,6 +15,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        timberLogger.i("Hihihi")
         setupUI()
     }
 

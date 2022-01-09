@@ -2,5 +2,7 @@ apply from: "$rootProject.projectDir/shared-deps.gradle"
 
 dependencies {
     implementation project(":core")
+    //Flex Box
+    implementation "com.google.android:flexbox:2.0.1"
 }
 
